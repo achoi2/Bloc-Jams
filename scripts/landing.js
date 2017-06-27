@@ -1,6 +1,10 @@
 var animatePoints = function() {
 
-           var points = document.getElementsByClassName('point');
+  var revealPoint = document.getElementsByClassName('point');
+
+      for (var i = 0, i < revealPoint.length; i++) {
+
+      }
 
            var revealFirstPoint = function() {
                points[0].style.opacity = 1;
