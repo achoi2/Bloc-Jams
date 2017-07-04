@@ -30,6 +30,22 @@
      ]
  };
 
+ // Example Album
+  var albumSmith = {
+      title: 'Fruit',
+      artist: 'John Smith',
+      label: 'Food',
+      year: '2017',
+      albumArtUrl: 'assets/images/album_covers/01.png',
+      songs: [
+          { title: 'Orange', duration: '1:00' },
+          { title: 'Grape', duration: '2:00' },
+          { title: 'Apple', duration: '3:00' },
+          { title: 'Stawberry', duration: '4:00'},
+          { title: 'Kiwi', duration: '5:00'}
+      ]
+  };
+
  var createSongRow = function(songNumber, songName, songLength) {
     var template =
        '<tr class="album-view-song-item">'
@@ -68,3 +84,7 @@ var setCurrentAlbum = function(album) {
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+window.onload = function () {
+    window.addEventListener('toggle', function (album) )
+}
