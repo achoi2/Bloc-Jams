@@ -156,12 +156,14 @@ var createSongRow = function(songNumber, songName, songLength) {
 
   var $previousButton = $('.main-controls .previous');
   var $nextButton = $('.main-controls .next');
+  var $playPauseSameBar = $('.main-controls .play-pause')
 
   $(document).ready(function() {
       setCurrentAlbum(albumPicasso);
 
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
+     $playPauseSameBar.click(togglePlayFromPlayerBar);
   });
 
   var previousSong = function() {
@@ -219,3 +221,17 @@ var nextSong = function() {
      $nextSongNumberCell.html(pauseButtonTemplate);
      $lastSongNumberCell.html(lastSongNumber);
  };
+
+function togglePlayFromPlayerBar() {
+
+      if (currentSoundFile.isPaused()) {
+        $(this).html(pauseButtonTemplate);
+        $playerBarPlayButton.html(pauseButtonTemplate);
+        currentSoundFile.play();
+
+    } else {
+        $(this).html(pauseButtonTemplate);
+        $playerBarPauseButton.html(playButtonTemplate);
+        currentSoundFile.pause();
+    }
+  };
