@@ -80,7 +80,7 @@ var createSongRow = function(songNumber, songName, songLength) {
                   }
 
                }
-
+               filterTimeCode(songLength);
            };
 
        var onHover = function(event) {
@@ -145,7 +145,7 @@ var createSongRow = function(songNumber, songName, songLength) {
          currentSoundFile.bind('timeupdate', function(event) {
              var seekBarFillRatio = this.getTime() / this.getDuration();
              var $seekBar = $('.seek-control .seek-bar');
-
+             var currentTime = $(".current-time").text(currentTime);
              updateSeekPercentage($seekBar, seekBarFillRatio);
          });
      }
@@ -215,6 +215,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
+    $(".total-time").text(totalTime);
  };
 
   var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -289,3 +290,14 @@ var nextSong = function() {
     $nextButton.click(nextSong);
 
  });
+ function setCurrentTimeInPlayerBar(currentTime) {
+     $(".current-time").text(currentTime);
+ };
+ function setTotalTimeInPlayerBar(totalTime) {
+     $(".total-time").text(totalTime);
+ };
+ function filterTimeCode(timeInSeconds) {
+        var secondsInNumberForm = parseFloat(timeInSeconds);
+
+ }
+ filterTimeCode(currentTime, totalTime);
