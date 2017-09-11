@@ -5,9 +5,9 @@ var setSong = function(songNumber) {
 
      currentlyPlayingSongNumber = parseInt(songNumber);
      currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
-     // #1
+
      currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
-         // #2
+
          formats: [ 'mp3' ],
          preload: true
      });
@@ -57,12 +57,12 @@ var createSongRow = function(songNumber, songName, songLength) {
                       updateSeekBarWhileSongPlays();
                       currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
 
-                      +
-                      +   var $volumeFill = $('.volume .fill');
-                      +   var $volumeThumb = $('.volume .thumb');
-                      +   $volumeFill.width(currentVolume + '%');
-                      +   $volumeThumb.css({left: currentVolume + '%'});
-                      +
+
+                        var $volumeFill = $('.volume .fill');
+                        var $volumeThumb = $('.volume .thumb');
+                        $volumeFill.width(currentVolume + '%');
+                        $volumeThumb.css({left: currentVolume + '%'});
+
 
                       $(this).html(pauseButtonTemplate);
                       updatePlayerBarSong();
@@ -79,7 +79,7 @@ var createSongRow = function(songNumber, songName, songLength) {
                       currentSoundFile.pause();
                   }
 
-               }
+               };
 
            };
 
@@ -289,3 +289,5 @@ var nextSong = function() {
     $nextButton.click(nextSong);
 
  });
+
+ 
